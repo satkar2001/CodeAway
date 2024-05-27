@@ -1,12 +1,21 @@
-import { Button } from "./components/ui/button"
+import "./App.scss";
+import { Toaster } from "react-hot-toast";
+import Header from "./components/header/Header";
+import { BrowserRouter as Router } from "react-router-dom";
+import WebDevLab from "./components/WebDevLab/WebDevLab";
 
 function App() {
-
-  return <>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsam corrupti pariatur totam debitis dolorem, porro nihil similique optio nam sit odio itaque vero sapiente illum nostrum magni. Libero, repellat. 
-  <Button variant={"destructive"} >hi</Button>
-  </>
-
+  return (
+    <>
+      <Toaster position="bottom-center" reverseOrder={false} />
+      <div className="App">
+        <Header />
+        <Router>
+          <WebDevLab />
+        </Router>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
